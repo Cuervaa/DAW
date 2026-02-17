@@ -1,0 +1,163 @@
+USE supermercado;
+-- 1.Consulta obtencion de los gerentes--
+SELECT idcliente, cia, contacto, cargo 
+FROM cliente WHERE cargo = 'Gerente de marketing' OR cargo = 'Gerente de contabilidad' 
+ORDER BY contacto;
+-- 2. Productos distribuidos en paquetes -- 
+SELECT idproducto, nombre, medida FROM producto
+WHERE medida LIKE '%paq%'
+ORDER BY nombre;
+
+-- Pedidos con fecha en mayo de 2019 (usando AND) --
+SELECT idpedido, idcliente, fechapedido
+FROM pedido
+WHERE fechapedido >= '2019-05-01' AND fechapedido < '2019-06-01';
+
+-- Pedidos con fecha en mayo de 2019 (usando BETWEEN) -- 
+SELECT idpedido, idcliente, fechapedido
+FROM pedido
+WHERE fechapedido BETWEEN '2019-05-01' AND '2019-05-31 23:59:59';
+
+-- Pedidos junto con la empresa y el contacto del cliente
+SELECT p.idpedido,
+    p.fechapedido,
+    c.cia,
+    c.contacto
+FROM pedido p
+JOIN cliente c ON p.idcliente = c.idcliente;
+
+-- Relación de ventas con nombre del producto e importe final
+SELECT d.idpedido,
+    d.idproducto,
+    p.nombre AS producto,
+    d.precio,
+    d.unidades,
+    d.descuento,
+    (d.precio * d.unidades * (1 - d.descuento)) AS importe
+FROM detalle d
+JOIN producto p ON d.idproducto = p.idproducto
+ORDER BY d.idpedido, p.nombre;
+
+-- Relación de ventas con producto, importe y fecha del pedido
+SELECT pdi.idpedido,
+    ped.fechapedido AS fechaventa,
+    pdi.idproducto,
+    pr.nombre AS producto,
+    pdi.precio,
+    pdi.unidades,
+    pdi.descuento,
+    (pdi.precio * pdi.unidades * (1 - pdi.descuento)) AS importe
+FROM detalle pdi
+JOIN producto pr ON pdi.idproducto = pr.idproducto
+JOIN pedido ped ON pdi.idpedido = ped.idpedido
+ORDER BY ped.fechapedido, pdi.idpedido;
+
+-- Inserción de un nuevo producto en la categoría Repostería
+INSERT INTO producto (idproducto, nombre, idcategoria, medida, precio, stock)
+VALUES (78, 'Mermelada de calabaza', 3, NULL, 0, 0);
+
+SELECT * FROM producto WHERE idproducto = 78;
+
+-- Ventas con nombre del producto, incluyendo productos nunca vendidos
+SELECT p.nombre,
+    d.idpedido,
+    d.precio,
+    d.unidades,
+    d.descuento
+FROM producto p
+LEFT JOIN detalle d ON p.idproducto = d.idproducto
+ORDER BY d.idpedido;
+
+-- Productos que no aparecen en ninguna línea de detalle
+SELECT p.idproducto,
+    p.nombre
+FROM producto p
+LEFT JOIN detalle d ON p.idproducto = d.idproducto
+WHERE d.idproducto IS NULL;
+
+-- Importe total de cada pedido
+SELECT d.idpedido,
+    SUM(d.precio * d.unidades * (1 - d.descuento)) AS importe_total
+FROM detalle d
+GROUP BY d.idpedido
+ORDER BY d.idpedido;
+
+-- Número de pedidos realizados por cada cliente
+SELECT c.idcliente,
+    c.cia,
+    COUNT(p.idpedido) AS numero_pedidos
+FROM cliente c
+LEFT JOIN pedido p ON c.idcliente = p.idcliente
+GROUP BY c.idcliente, c.cia
+ORDER BY numero_pedidos DESC;
+
+-- Unión de pedidos (importe) y clientes (número de pedidos)
+SELECT d.idpedido AS id,
+    SUM(d.precio * d.unidades * (1 - d.descuento)) AS valor
+FROM detalle d
+GROUP BY d.idpedido
+UNION
+SELECT c.idcliente AS id,
+    COUNT(p.idpedido) AS valor
+FROM cliente c
+LEFT JOIN pedido p ON c.idcliente = p.idcliente
+GROUP BY c.idcliente;
+
+-- Productos cuyo precio está por debajo de la media
+SELECT idproducto,
+    nombre,
+    precio
+FROM producto
+WHERE precio < (
+    SELECT AVG(precio)
+    FROM producto
+);
+
+
+-- Datos del producto más caro
+SELECT idproducto,
+    nombre,
+    precio
+FROM producto
+WHERE precio = (
+    SELECT MAX(precio)
+    FROM producto
+);
+
+-- Productos que no aparecen en ningún detalle de pedido
+SELECT idproducto,
+    nombre
+FROM producto
+WHERE idproducto NOT IN (
+    SELECT idproducto
+    FROM detalle
+);
+
+-- Unión de clientes de supermercado y tienda
+SELECT CAST(idcliente AS CHAR(10)) AS id,
+    cia                         AS nombre,
+    contacto                    AS contacto,
+    pais                        AS lugar
+FROM supermercado.cliente
+UNION
+SELECT CAST(id_cliente AS CHAR(10)) AS id,
+    nombre                       AS nombre,
+    apellido                     AS contacto,
+    ciudad                       AS lugar
+FROM tienda.cliente;
+
+EXPLAIN
+SELECT
+    idproducto,
+    nombre
+FROM producto
+WHERE idproducto NOT IN (
+    SELECT idproducto
+    FROM detalle
+);
+
+-- Relación de clientes con formato Compañía (Contacto) y teléfono
+SELECT
+    CONCAT(cia, ' (', contacto, ')') AS Cia_Contacto,
+    tlf
+FROM cliente;

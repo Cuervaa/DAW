@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es"> <!-- Idioma del documento para accesibilidad y SEO -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mis cómics manga favoritos</title>
+
+    <style>
+        /* ===== Layout base y tipografía ===== */
+        html, body {height: 100%;} /* Necesario para el "sticky footer" con flex */
+
+        body {
+            min-height: 100vh;              /* Ocupa al menos el alto de la ventana */
+            display: flex;                  /* Contenedor flex vertical */
+            flex-direction: column;         /* Apila header, main, footer en columna */
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;      /* Gris claro de fondo para contraste */
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            font-family: fantasy;
+            font-variant: small-caps;
+        }
+        /* ===== Cabecera y pie ===== */
+        header{
+            background-color: #333; /* Fondo oscuro para separar visualmente */
+            color:white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top:  auto; /* Empuja el footer al final cuando hay poco contenido */
+        }
+
+        /* ===== Zona principal ===== */
+        main {
+            padding: 20px;
+            display: flex;        /* Usamos flex para poner cards en fila */
+            gap: 30px;           /* Separación grande entre cards */
+            flex-wrap: wrap;      /* Permite que bajen a otra línea si no caben */
+            justify-content: center; /* Centra las cards en el contenedor */
+        }
+
+        /* ===== Cards (tarjetas con imagen + panel deslizante) ===== */
+        .card {
+            position: relative;                 /* Permite posicionar .info dentro */
+            width: clamp(220px, 28vw, 300px);   /* Ancho fluido entre 220 y 300px aprox. */
+            border: 1px solid #ccc;
+            overflow: hidden;                   /* Oculta el panel cuando está fuera */
+            background: white;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;       /* Llenar la altura de la card; puede estirar según la imagen */
+            display: block;     /* Elimina espacios bajo la imagen (inline-gap) */
+        }
+
+        .card .info {
+            position: absolute;
+            top: 0;
+            right: -100%;         /* Empieza fuera por la derecha */
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95); /* Fondo semitransparente para ver la portada debajo */
+            padding: 15px;
+            box-sizing: border-box;
+            transition: right 0.4s ease;  /* Animación de entrada */
+            overflow-y: auto;             /* Scroll si el texto es largo */
+        }
+
+        .card:hover .info {
+            right: 0; /* Al pasar el ratón, el panel se desliza hacia dentro */
+        }
+
+        .card h2 {
+            text-align: center;
+            color: rgb(37, 0, 139);
+            margin-top: 0; /* Quita margen superior que empuja el título hacia abajo */
+        }
+
+        .card ul {
+            list-style-type: square;
+            padding-left: 20px; /* Indentación para viñetas */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== Cabecera del sitio ===== -->
+    <header>
+        <h1>Cómics Manga Populares</h1>
+        <p>Proyecto de Evaluación</p>
+    </header>
+
+    <!-- ===== Contenedor principal con tres cards ===== -->
+    <main>
+        <!-- === Card: Naruto === -->
+        <div class="card">
+            <!-- Portada visible por defecto -->
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" alt="Portada manga Naruto">
+            <!-- Panel con información que aparece al hacer hover -->
+            <div class="info">
+                <h2>Naruto</h2>
+                <p><strong>Autor:</strong> Masashi Kishimoto</p>
+                <p><strong>Género:</strong> Shōnen, acción, aventura</p>
+                <p><strong>Editorial:</strong> Shueisha</p>
+                <p><strong>Años:</strong> 1999-2014</p>
+                <p><strong>Volúmenes:</strong> 72 </p>
+                <p>Naruto cuenta la historia de un joven ninja que busca convertirse en Hokage, el líder de su aldea.</p>
+                <ul>
+                    <li>Naruto Uzumaki</li>
+                    <li>Sasuke Uchiha</li>
+                    <li>Sakura Haruno</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- === Card: One Piece === -->
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71Ez5R0JM6L._UF1000,1000_QL80_.jpg" alt="Portada manga One Piece">
+            <div class="info">
+                <h2>One Piece</h2>
+                <p><strong>Autor:</strong> Eiichirō Oda</p> <!-- El meta UTF-8 permite el “ō” -->
+                <p><strong>Género:</strong> Shōnen, aventura, fantasía</p>
+                <p><strong>Editorial:</strong> Shueisha</p>
+                <p><strong>Años:</strong> 1997 - Actualidad</p>
+                <p><strong>Volúmenes:</strong> +100 </p>
+                <p>One Piece sigue a Monkey D. Luffy y su tripulación en busca del legendario tesoro.</p>
+                <ul>
+                    <li>Monkey D. Luffy</li>
+                    <li>Roronoa Zoro</li>
+                    <li>Nami</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- === Card: Death Note === -->
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71ZFXxT85hL._UF1000,1000_QL80_.jpg" alt="Portada manga Death Note">
+            <div class="info">
+                <h2>Death Note</h2>
+                <p><strong>Autores:</strong> Tsugumi Oba (Guion) y Takeshi Obata (Dibujo)</p>
+                <p><strong>Género:</strong> Suspenso, psicológico, sobrenatural, misterio</p>
+                <p><strong>Editorial:</strong> Shueisha</p>
+                <p><strong>Años:</strong> 2003-2006 </p>
+                <p><strong>Volúmenes:</strong> 12 </p>
+                <p>La historia sigue a Light Yagami, un estudiante que encuentra una libreta con el poder de matar a
+                    cualquier persona cuyo nombre sea escrito en ella.</p>
+                <ul>
+                    <li>Light Yagami</li>
+                    <li>L</li>
+                    <li>Misa Amane</li>
+                    <li>Ryuk</li>
+                </ul>
+            </div>
+        </div>
+        <!-- === Card: Dragon Ball === -->
+        <div class="card">
+            <img src="https://www.planetadelibros.com/usuaris/libros/fotos/340/original/portada_dragon-ball-super-n-19_akira-toriyama_202301111438.jpg" alt="Portada manga Death Note">
+            <div class="info">
+                <h2>Dragon Ball</h2>
+                <p><strong>Autores:</strong> Akira Toriyama</p>
+                <p><strong>Género:</strong> Shōnen, acción, aventuras, artes marciales, fantasía </p>
+                <p><strong>Editorial:</strong> Shueisha</p>
+                <p><strong>Años:</strong> 1984 - 1995</p>
+                <p><strong>Volúmenes:</strong> 42 </p>
+                <p>La historia sigue a Son Goku desde su infancia mientras entrena artes marciales y busca las esferas del dragón, 
+                    objetos mágicos capaces de invocar a un dragón que concede deseos.</p>
+                <ul>
+                    <li>Son Goku </li>
+                    <li>Bulma </li>
+                    <li> krillin </li>
+                    <li>Piccolo </li>
+                    <li>Vegeta</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Unai Cuerva Garcia. CEI Centro de Estudios de Innovación Diseño y Marketing.</p>
+    </footer>
+</body>
+</html>

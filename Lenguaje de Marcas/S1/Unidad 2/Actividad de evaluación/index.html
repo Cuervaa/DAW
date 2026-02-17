@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLiving | Vida ecológica y sostenible</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">EcoLiving</div>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <button class="menu-btn" id="menu-btn">☰</button>
+        </div>
+    </header>
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Vive en equilibrio con el planeta</h1>
+                <p>Productos ecológicos para un futuro sostenible.</p>
+                <a href="#" class="btn">Explora nuestros productos</a>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS DESTACADOS -->
+        <section class="productos">
+            <h2>Productos destacados</h2>
+            <div class="grid">
+                <article class="card">
+                    <img src="img/producto1.jpg" alt="Botella ecológica">
+                    <h3>Botella ecológica</h3>
+                    <p>€15.00</p>
+                    <button>Añadir al carrito</button>
+                </article>
+                <article class="card">
+                    <img src="img/producto2.jpg" alt="Cepillo de bambú">
+                    <h3>Cepillo de bambú</h3>
+                    <p>€5.00</p>
+                    <button>Añadir al carrito</button>
+                </article>
+                <article class="card">
+                    <img src="img/producto3.jpg" alt="Bolsa reutilizable">
+                    <h3>Bolsa reutilizable</h3>
+                    <p>€10.00</p>
+                    <button>Añadir al carrito</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section class="about">
+            <div class="about-content">
+                <div class="text">
+                    <h2>Sobre EcoLiving</h2>
+                    <p>En EcoLiving creemos que cada pequeño gesto cuenta. Por eso ofrecemos productos que respetan el medio
+                        ambiente, hechos con materiales naturales y sostenibles.</p>
+                </div>
+                <img src="img/about.png" alt="Equipo EcoLiving">
+            </div>
+        </section>
+
+        <!-- BLOG -->
+        <section class="blog">
+            <h2>Consejos ecológicos</h2>
+            <div class="grid">
+                <article>
+                    <img src="img/blog1.png" alt="Artículo 1">
+                    <h3>5 hábitos sostenibles para el día a día</h3>
+                    <a href="#">Leer más</a>
+                </article>
+                <article>
+                    <img src="img/blog2.png" alt="Artículo 2">
+                    <h3>Materiales reciclables en casa</h3>
+                    <a href="#">Leer más</a>
+                </article>
+                <article>
+                    <img src="img/blog3.png" alt="Artículo 3">
+                    <h3>Cómo reducir tu huella de carbono</h3>
+                    <a href="#">Leer más</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 EcoLiving | Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Menú responsive
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

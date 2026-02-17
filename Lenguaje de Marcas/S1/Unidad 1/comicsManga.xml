@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comics>
+    <manga>
+        <titulo>Naruto</titulo>
+        <autor>Masashi Kishimoto</autor>
+        <editorial>Shueisha</editorial>
+        <años>1999-2014</años>
+        <volumenes>72</volumenes>
+        <genero>Shōnen, acción, aventura, artes marciales, fantasía</genero>
+        <sinopsis>
+            La historia sigue a Naruto Uzumaki, un joven ninja que sueña con convertirse en Hokage (líder de su aldea)
+            mientras busca el reconocimiento de los demás y lucha contra el destino ligado al demonio 
+            zorro de nueve colas sellado en su interior.
+        </sinopsis>
+        <personajes>
+            <personaje>Naruto Uzumaki</personaje>
+            <personaje>Sasuke Uchiha</personaje>
+            <personaje>Sakura Haruno</personaje>
+            <personaje>Kakashi Hatake</personaje>
+        </personajes>
+    </manga>
+
+    <manga>
+        <titulo>One Piece</titulo>
+        <autor>Eiichiro Oda</autor>
+        <editorial>Shueisha</editorial>
+        <años>1997-actualidad</años>
+        <volumenes>100+</volumenes>
+        <genero>Shōnen, acción, aventura, fantasía, comedia</genero>
+        <sinopsis>
+            La obra sigue a Monkey D. Luffy y a su tripulación de piratas en busca del "One Piece", 
+            el tesoro legendario que convertirá a quien lo encuentre en el Rey de los Piratas.
+        </sinopsis>
+        <personajes>
+            <personaje>Monkey D. Luffy</personaje>
+            <personaje>Roronoa Zoro</personaje>
+            <personaje>Nami</personaje>
+            <personaje>Usopp</personaje>
+            <personaje>Sanji</personaje>
+        </personajes>
+    </manga>
+</comics>
+
+<comics xmlns="http://www.example.com/comics" xmlns:m="http://www.example.com/manga" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <m:manga>
+        <m:titulo>Naruto</m:titulo>
+        <m:autor>Masashi Kishimoto</m:autor>
+        <m:editorial>Shueisha</m:editorial>
+        <m:años>1999-2014</m:años>
+        <m:volumenes>72</m:volumenes>
+        <m:genero>Shōnen, acción, aventura, artes marciales, fantasía</m:genero>
+        <m:sinopsis>
+            La historia sigue a Naruto Uzumaki, un joven ninja que sueña con convertirse en Hokage (líder de su aldea)
+            mientras busca el reconocimiento de los demás y lucha contra el destino ligado al demonio 
+            zorro de nueve colas sellado en su interior.
+        </m:sinopsis>
+        <m:personajes>
+            <m:personaje>Naruto Uzumaki</m:personaje>
+            <m:personaje>Sasuke Uchiha</m:personaje>
+            <m:personaje>Sakura Haruno</m:personaje>
+            <m:personaje>Kakashi Hatake</m:personaje>
+        </m:personajes>
+    </m:manga>
+
+    <m:manga>
+        <m:titulo>One Piece</m:titulo>
+        <m:autor>Eiichiro Oda</m:autor>
+        <m:editorial>Shueisha</m:editorial>
+        <m:años>1997-actualidad</m:años>
+        <m:volumenes>100+</m:volumenes>
+        <m:genero>Shōnen, acción, aventura, fantasía, comedia</m:genero>
+        <m:sinopsis>
+            La obra sigue a Monkey D. Luffy y a su tripulación de piratas en busca del "One Piece", 
+            el tesoro legendario que convertirá a quien lo encuentre en el Rey de los Piratas.
+        </m:sinopsis>
+        <m:personajes>
+            <m:personaje>Monkey D. Luffy</m:personaje>
+            <m:personaje>Roronoa Zoro</m:personaje>
+            <m:personaje>Nami</m:personaje>
+            <m:personaje>Usopp</m:personaje>
+            <m:personaje>Sanji</m:personaje>
+        </m:personajes>
+    </m:manga>
+</comics>

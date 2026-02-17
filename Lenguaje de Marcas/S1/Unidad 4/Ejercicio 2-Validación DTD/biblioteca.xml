@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo SYSTEM "libros.dtd">
+<catalogo>
+    <libro>
+        <titulo>Aprendiendo XML</titulo>
+        <autor>Juan Pérez</autor>
+        <editorial>Editorial Tech</editorial>
+        <anio>2020</anio>
+        <isbn>978-3-16-148410-0</isbn>
+    </libro>
+    <libro>
+        <titulo>XML Avanzado</titulo>
+        <autor>María Gómez</autor>
+        <editorial>Editorial Code</editorial>
+        <anio>2021</anio>
+        <isbn>978-1-23-456789-0</isbn>
+    </libro>
+    <libro>
+        <titulo>Introducción a DTD</titulo>
+        <autor>Carlos López</autor>
+        <editorial>Editorial Data</editorial>
+        <anio>2019</anio>
+        <isbn>978-0-12-345678-9</isbn>
+    </libro>
+</catalogo>

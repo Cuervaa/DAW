@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Balonmano en tu Zona</title>
+    <meta name="description"
+        content="Página web dedicada a la promoción del balonmano y a la búsqueda de clubes cercanos.">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1 id="titulo-principal">Descubre el Balonmano</h1>
+        <p id="descripcion-principal">
+            Promoviendo el balonmano y conectando jugadores con clubes de su zona.
+        </p>
+    </header>
+    <section id="inicio">
+        <h2>¿Qué es el balonmano?</h2>
+        <p>
+            El balonmano es un deporte colectivo que combina velocidad, técnica y trabajo en equipo.
+        </p>
+        <img src="img/balonmano-inicio.jpg" alt="Imagen de balonmano" id="imagen-inicio">
+    </section>
+    <section id="beneficios">
+        <h2>¿Por qué practicar balonmano?</h2>
+        <div class="beneficios-cards" id="lista-beneficios">
+            <div class="beneficio-card">
+                <img src="img/iconos/fitness.png" alt="Condición física" class="icono-beneficio">
+                <p>Mejora la condición física y la coordinación</p>
+            </div>
+            <div class="beneficio-card">
+                <img src="img/iconos/equipo.png" alt="Trabajo en equipo" class="icono-beneficio">
+                <p>Fomenta el trabajo en equipo y la disciplina</p>
+            </div>
+            <div class="beneficio-card">
+                <img src="img/iconos/social.png" alt="Integración social" class="icono-beneficio">
+                <p>Favorece la integración social</p>
+            </div>
+            <div class="beneficio-card">
+                <img src="img/iconos/energia.png" alt="Deporte dinámico" class="icono-beneficio">
+                <p>Es un deporte dinámico y emocionante</p>
+            </div>
+            <div class="beneficio-card">
+                <img src="img/iconos/estrategia.png" alt="Estrategia y táctica" class="icono-beneficio">
+                <p>Desarrolla habilidades estratégicas y tácticas</p>
+            </div>
+            <div class="beneficio-card">
+                <img src="img/iconos/salud.png" alt="Salud mental" class="icono-beneficio">
+                <p>Contribuye a la salud mental y bienestar</p>
+            </div>
+        </div>
+    </section>
+    <section id="clubes">
+        <h2>Clubes de tu zona</h2>
+        <label for="comunidad">Comunidad Autonoma:</label>
+        <select id="comunidad">
+            <option value="">Selecciona una comunidad</option>
+        </select>
+        <div id="listado-clubes">
+        </div>
+    </section>
+    <section id="apuntate">
+        <h2>Apúntate a un club</h2>
+        <form id="formulario-inscripcion">
+            <label for="nombre">Nombre y apellidos:</label>
+            <input type="text" id="nombre" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" required>
+            <label for="club">Club de interés:</label>
+            <select id="club">
+                <option value="">Selecciona un club</option>
+            </select>
+            <button type="submit" id="boton-enviar">Enviar</button>
+        </form>
+        <p id="mensaje-confirmacion"></p>
+    </section>
+    <section id="galeria">
+        <h2>Galería</h2>
+        <div id="contenedor-galeria">
+            <img src="img/galeria1.jpg" alt="Imagen de balonmano" id="imagen-galeria">
+        </div>
+        <button id="anterior">Anterior</button>
+        <button id="siguiente">Siguiente</button>
+    </section>
+    <section id="informacion">
+        <h2>Información</h2>
+        <p>
+            Esta web tiene como objetivo promover el balonmano y facilitar el contacto entre jugadores y clubes.
+        </p>
+        <p>
+            Los clubes se pondrán en contacto contigo una vez enviada la solicitud.
+        </p>
+    </section>
+    <section id="redes-sociales">
+        <h2>Síguenos en redes sociales</h2>
+        <h6>Redes Sociales de la Real Federación Española de Balonmano</h6>
+        <div class="card-red-social" id="card-instagram">
+            <a href="https://www.instagram.com/rfebalonmano/" target="_blank">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+        </div>
+        <div class="card-red-social" id="card-whatsapp">
+            <a href="https://www.whatsapp.com/channel/0029VaIPsqXCBtxFNHcvFx2Y?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnSs68PtVrjfAgfusxBD1wEDHcLTxqaM9p4Ft1sjOvkyDOgvwDH-MKMGyBBVY_aem_gwcNnpj8ibsqyGeYy8DAWQ"
+                target="_blank">
+                <img src="img/whatsapp.png" alt="whatsapp">
+            </a>
+        </div>
+        <div class="card-red-social" id="card-web">
+            <a href="https://www.rfebm.com" target="_blank">
+                <img src="img/rfebm.png" alt="pagina_web">
+            </a>
+        </div>
+        <div class="card-red-social" id="card-facebook">
+            <a href="https://www.facebook.com/rfebalonmano" target="_blank">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+        </div>
+        <div class="card-red-social" id="card-youtube">
+            <a href="https://www.youtube.com/@RFEBM" target="_blank">
+                <img src="img/youtube.png" alt="YouTube">
+            </a>
+        </div>
+    </section>
+    <footer id="footer">
+        <p>&copy; <span id="anio-actual"></span> Promoción del Balonmano</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

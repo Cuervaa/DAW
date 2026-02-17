@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE catalogo SYSTEM "productos.dtd"> -->
+<catalogo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="productos.xsd">
+<producto>
+        <nombre>Galletas sin fructosa</nombre>
+        <marca>HealthyFood</marca>
+        <precio>2.50</precio>
+        <contenidoFructosa>0</contenidoFructosa>
+        <apto>si</apto>
+    </producto>
+    <producto>
+        <nombre>Pan especial</nombre>
+        <marca>BioPan</marca>
+        <precio>3.20</precio>
+        <contenidoFructosa>0</contenidoFructosa>
+        <apto>si</apto>
+    </producto>
+    <producto>
+        <nombre>Bebida vegetal</nombre>
+        <marca>GreenLife</marca>
+        <precio>1.80</precio>
+        <contenidoFructosa>0.5</contenidoFructosa>
+        <apto>no</apto>
+    </producto>
+</catalogo>

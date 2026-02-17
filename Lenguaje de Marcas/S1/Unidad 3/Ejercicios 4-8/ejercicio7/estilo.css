@@ -1,0 +1,61 @@
+.estilo1 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: red;
+}
+
+.estilo2 {
+    font-family: Courier New, monospace;
+    font-size: 16px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.estilo3 {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    background-color: #004494;
+}
+
+button:last-of-type {
+    background-color: #dc3545;
+}
+
+button:last-of-type:hover {
+    background-color: #b52a37;
+}
+p {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Fitness Federico</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="contacto">
+    <header>
+        <h1>Fitness Federico</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="sobremi.html">Sobre mí</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Contacto</h2>
+            <form action="contacto.php" method="post">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="name" required><br><br>
+
+                <label for="correo">Correo Electrónico:</label><br>
+                <input type="email" id="correo" name="email" required><br><br>
+                
+                <label for="telefono">Teléfono:</label><br>
+                <input type="tel" id="telefono" name="phone" required><br><br>
+
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="message" rows="4" required></textarea><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <aside class="info-contacto" aria-labelledby="titulo-info">
+            <h3 id="titulo-info">Dónde estamos</h3>
+            <div class="mapa">
+                <iframe title="Ubicación Fitness Federico"
+                    src="https://www.google.com/maps?q=Plaza%20Mayor%2C%20Madrid&output=embed" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <ul class="datos">
+                <li><strong>Dirección:</strong> Calle Energía 24, 28000 Madrid</li>
+                <li><strong>Teléfono:</strong> <a href="tel:+34900123456">900 123 456</a></li>
+                <li><strong>Email:</strong> <a href="mailto:hola@fitnessfederico.es">hola@fitnessfederico.es</a></li>
+                <li><strong>Horario:</strong> L–V 8:00–21:00 · S 9:00–14:00</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 Fitness Federico. Todos los derechos reservados. <i>by Unai Cuerva Garcia</i></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* ===============================
+    ESTILOS GENERALES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ===============================
+            ENCABEZADO
+================================ */
+
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* ===============================
+            SECCIONES GENERALES
+================================ */
+
+section {
+    background-color: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #003366;
+}
+
+/* ===============================
+            SECCIÓN INICIO
+================================ */
+
+#inicio img {
+    display: block;
+    max-width: 100%;
+    margin: 1rem auto 0 auto;
+    border-radius: 8px;
+}
+
+/* ===============================
+            BENEFICIOS
+================================ */
+
+#beneficios ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+#beneficios li {
+    margin-bottom: 0.5rem;
+}
+.beneficios-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.beneficio-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.beneficio-card .icono {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.beneficio-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* ===============================
+                CLUBES
+================================ */
+
+#clubes label {
+    display: block;
+    margin-top: 1rem;
+}
+
+#clubes input,
+#clubes select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+#listado-clubes {
+    margin-top: 1.5rem;
+}
+
+.club {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.club button {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.club button:hover {
+    background-color: #0055aa;
+}
+/* ===============================
+    CLUBES EN FORMATO CARDS
+================================ */
+
+.contenedor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.club-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.club-card h4 {
+    margin-bottom: 1rem;
+    color: #003366;
+    font-size: 1.1rem;
+}
+
+.club-card button {
+    padding: 0.4rem 0.8rem;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.club-card button:hover {
+    background-color: #0055aa;
+}
+
+/* ===============================
+        FORMULARIO APÚNTATE
+================================ */
+
+#apuntate form {
+    display: flex;
+    flex-direction: column;
+}
+
+#apuntate label {
+    margin-top: 1rem;
+}
+
+#apuntate input,
+#apuntate select {
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+#boton-enviar {
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#boton-enviar:hover {
+    background-color: #0055aa;
+}
+
+#mensaje-confirmacion {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* ===============================
+                GALERÍA
+================================ */
+
+#galeria {
+    text-align: center;
+}
+#contenedor-galeria {
+    width: 100%;
+    max-width: 800px;     
+    height: 450px;         
+    margin: 0 auto 1rem;
+    overflow: hidden;      
+    border-radius: 10px;
+}
+
+#imagen-galeria {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     
+    display: block;
+}
+
+#contenedor-galeria img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+#galeria button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#galeria button:hover {
+    background-color: #0055aa;
+}
+
+/* ===============================
+            REDES SOCIALES
+================================ */
+
+#redes-sociales {
+    text-align: center;
+}
+
+.card-red-social {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.card-red-social img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.card-red-social img:hover {
+    transform: scale(1.1);
+}
+
+/* ===============================
+                FOOTER
+================================ */
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}

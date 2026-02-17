@@ -1,0 +1,7 @@
+<!ELEMENT catalogo (producto+)>
+<!ELEMENT producto (nombre, marca, precio, contenidoFructosa, apto)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT contenidoFructosa (#PCDATA)>
+<!ELEMENT apto (#PCDATA)>
